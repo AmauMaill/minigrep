@@ -38,6 +38,5 @@ cargo run -- to poem.txt > output.txt
 The program was made following TDD, you can run the tests with the command `cargo test`.
 
 [^1]: I would like to emphasise on the fact that: 
-
     - I did not design this program. 
     - This is just the result of me following a walkthrough.
