@@ -47,6 +47,10 @@ pub fn run(
         config.file_path
     )?;
 
+    for line in search(&config.query, &contents) {
+        println!("{line}");
+    }
+
     Ok(())
 }
 
