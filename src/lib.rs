@@ -21,6 +21,17 @@ impl Config {
     }
 }
 
+pub fn search<'a>(
+    query: &str,
+    contents: &'a str
+) -> Vec<&'a str> {
+    // The lifetime 'a ensure that the data
+    // returned by the search function will
+    // live as long as the content data
+    // passed in.
+    vec![]
+}
+
 pub fn run(
     config: Config
 ) -> Result<(), Box<dyn Error>> {
@@ -28,7 +39,25 @@ pub fn run(
         config.file_path
     )?;
 
-    println!("With test:\n{}", contents);
-
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn one_result() {
+        let query = "duct";
+        let contents =
+            "\
+        Rust:
+        safe, fast, productive.
+        Pick three.";
+
+        assert_eq!(
+            vec!["safe, fast, productive."],
+            search(query, contents)
+        );
+    }
 }
