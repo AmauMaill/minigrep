@@ -10,9 +10,9 @@ It is possible to search with or without case sensitivity.
 
 ## Usage
 
-The Most basic usage is using `cargo run -- [query] [file_path]`.
+The most basic usage is `cargo run -- [query] [file_path]`.
 
-Using (with `poem.txt` file):
+Using:
 
 ```bash
 cargo run -- to poem.txt
